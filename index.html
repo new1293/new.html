@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KITOBXON.PG | Kelajak Raqamli Kutubxonasi</title>
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@500;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Sichqoncha Neon Nuri -->
+    <div class="cursor-glow"></div>
+
+    <!-- Kinematik Yuklanish Ekrani (Loader) -->
+    <div class="loader-wrapper">
+        <div class="loader-content">
+            <h1 class="loader-logo">KITOBXON<span>.PG</span></h1>
+            <div class="loader-bar"><div class="progress"></div></div>
+            <p class="loader-status">Kvant tizimi yuklanmoqda...</p>
+        </div>
+    </div>
+
+    <!-- Audio Elementlar -->
+    <audio id="hover-sound" src="https://assets.mixkit.co/active_storage/sfx/2568/2568-84.wav" preload="auto"></audio>
+    <audio id="click-sound" src="https://assets.mixkit.co/active_storage/sfx/2753/2753-84.wav" preload="auto"></audio>
+    <audio id="bg-music" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" loop preload="auto"></audio>
+
+    <!-- Navigatsiya Satri -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">KITOBXON<span>.PG</span></a>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Asosiy</a></li>
+                <li><a href="#about">Biz haqimizda</a></li>
+                <li><a href="#books">Kutubxona</a></li>
+                <li><a href="#stats">Statistika</a></li>
+                <li><a href="#contact">Aloqa</a></li>
+            </ul>
+            <div class="nav-controls">
+                <button id="music-toggle" class="btn-icon" title="Musiqa"><i class="fas fa-volume-mute"></i></button>
+                <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Zarrachalar (Particles) Foni -->
+    <div class="particles-container" id="particles"></div>
+
+    <!-- HOME / HERO SECTION -->
+    <section id="home" class="hero-section">
+        <div class="hero-background-art">
+            <div class="floating-book geometry-1"><i class="fas fa-book-open"></i></div>
+            <div class="floating-book geometry-2"><i class="fas fa-atlas"></i></div>
+            <div class="floating-book geometry-3"><i class="fas fa-journal-whills"></i></div>
+        </div>
+        <div class="hero-content">
+            <div class="badge animate-reveal">KUTUBXONA V2.026</div>
+            <h1 class="hero-title animate-reveal">UZBEK ADABIYOTI <br><span class="text-gradient">CHEXRASIZ HUDUDDA</span></h1>
+            <p class="hero-subtitle animate-reveal">Kelajak kutubxonasiga xush kelibsiz. <span id="typing-text"></span></p>
+            <div class="hero-buttons animate-reveal">
+                <a href="#books" class="btn btn-primary sound-trigger"><span>Kitoblarni Ko‘rish</span><i class="fas fa-arrow-right"></i></a>
+                <a href="#about" class="btn btn-secondary sound-trigger"><span>Tizim Haqida</span></a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Pastga aylantiring</span>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="about-section scroll-reveal">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">01 // INTEGRATSIYA</span>
+                <h2 class="section-title">Yangi Avlod Mutolaasi</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-card glass-card visual-3d">
+                    <div class="card-icon"><i class="fas fa-brain-circuit"></i></div>
+                    <h3>Sun'iy Intellekt</h3>
+                    <p>Sizning qiziqishlaringizga mos keladigan kitoblarni AI algoritmlari orqali lahzada topib berish tizimi.</p>
+                    <div class="glow-element"></div>
+                </div>
+                <div class="about-card glass-card visual-3d">
+                    <div class="card-icon"><i class="fas fa-vr-cardboard"></i></div>
+                    <h3>Gologramma Interfeys</h3>
+                    <p>Kitoblarni nafaqat o'qish, balki 3D makonda ularning vizual olami bilan golografik tarzda bog'lanish imkoniyati.</p>
+                    <div class="glow-element"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOOKS SECTION -->
+    <section id="books" class="books-section scroll-reveal">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">02 // RAQAMLI TO'PLAM</span>
+                <h2 class="section-title">Kvant Javonlari</h2>
+            </div>
+
+            <!-- Qidiruv va Filtrlar -->
+            <div class="filter-wrapper glass-card">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="book-search" placeholder="Kitob nomini kiriting...">
+                </div>
+                <div class="filter-tabs">
+                    <button class="filter-btn active" data-filter="all">Barchasi</button>
+                    <button class="filter-btn" data-filter="classic">Klassika</button>
+                    <button class="filter-btn" data-filter="sci-fi">Ilmiy-fantastika</button>
+                    <button class="filter-btn" data-filter="history">Tarix</button>
+                </div>
+            </div>
+
+            <!-- Kitoblar Grid Tizimi -->
+            <div class="books-grid" id="books-container">
+                <!-- Kitob 1 -->
+                <div class="book-card-wrapper" data-category="classic">
+                    <div class="book-card-inner">
+                        <div class="book-front glass-card">
+                            <div class="book-cover-art c-1">
+                                <i class="fas fa-feather-pointed"></i>
+                            </div>
+                            <h3>O‘tkan Kunlar</h3>
+                            <p class="author">Abdulla Qodiriy</p>
+                            <span class="book-badge">Klassika</span>
+                        </div>
+                        <div class="book-back glass-card">
+                            <h3>O‘tkan Kunlar</h3>
+                            <p class="description">O'zbek romanchiligining cho'qqisi bo'lgan ushbu asar kiber-formatda qayta ishlandi.</p>
+                            <button class="btn btn-primary btn-sm sound-trigger"><span>O'qishni boshlash</span></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Kitob 2 -->
+                <div class="book-card-wrapper" data-category="sci-fi">
+                    <div class="book-card-inner">
+                        <div class="book-front glass-card">
+                            <div class="book-cover-art c-2">
+                                <i class="fas fa-user-astronaut"></i>
+                            </div>
+                            <h3>Yulduzlar Portlashi</h3>
+                            <p class="author">Toshkent Sci-Fi klubi</p>
+                            <span class="book-badge">Ilmiy-fantastika</span>
+                        </div>
+                        <div class="book-back glass-card">
+                            <h3>Yulduzlar Portlashi</h3>
+                            <p class="description">2150-yilda galaktikalararo sayohatga chiqqan o'zbek kiber-kosmonavtlari sarguzashtlari.</p>
+                            <button class="btn btn-primary btn-sm sound-trigger"><span>O'qishni boshlash</span></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Kitob 3 -->
+                <div class="book-card-wrapper" data-category="history">
+                    <div class="book-card-inner">
+                        <div class="book-front glass-card">
+                            <div class="book-cover-art c-3">
+                                <i class="fas fa-monument"></i>
+                            </div>
+                            <h3>Temur Tuzuklari</h3>
+                            <p class="author">Amir Temur</p>
+                            <span class="book-badge">Tarix</span>
+                        </div>
+                        <div class="book-back glass-card">
+                            <h3>Temur Tuzuklari</h3>
+                            <p class="description">Buyuk hukmdorning boshqaruv va strategiya qonunlari raqamli matritsa ko'rinishida.</p>
+                            <button class="btn btn-primary btn-sm sound-trigger"><span>O'qishni boshlash</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS SECTION -->
+    <section id="stats" class="stats-section scroll-reveal">
+        <div class="stats-container glass-card">
+            <div class="stat-item">
+                <h2 class="counter" data-target="15000">0</h2>
+                <p>Raqamli Kitoblar</p>
+            </div>
+            <div class="stat-item">
+                <h2 class="counter" data-target="42000">0</h2>
+                <p>Faol Kitobxonlar</p>
+            </div>
+            <div class="stat-item">
+                <h2 class="counter" data-target="350">0</h2>
+                <p>AI Tavsiyalari/sek</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="contact-section scroll-reveal">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">03 // MATRITSA BO'GLANISHI</span>
+                <h2 class="section-title">Tizimga Ulanish</h2>
+            </div>
+            <div class="contact-wrapper">
+                <form class="contact-form glass-card" onsubmit="event.preventDefault();">
+                    <div class="form-group">
+                        <input type="text" required placeholder=" ">
+                        <label>Sizning Ismingiz</label>
+                        <div class="input-glow"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" required placeholder=" ">
+                        <label>Kvant Pochta (Email)</label>
+                        <div class="input-glow"></div>
+                    </div>
+                    <div class="form-group">
+                        <textarea required rows="5" placeholder=" "></textarea>
+                        <label>Xabaringiz</label>
+                        <div class="input-glow"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary sound-trigger"><span>Kvant xabar yuborish</span><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 KITOBXON.PG. Hamma huquqlar kiber-fazoda himoyalangan.</p>
+            <div class="social-links">
+                <a href="#" class="social-icon sound-trigger"><i class="fab fa-telegram"></i></a>
+                <a href="#" class="social-icon sound-trigger"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon sound-trigger"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="social-icon sound-trigger"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
